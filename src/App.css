@@ -1,10 +1,123 @@
-* {
+html, body, #root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #2D76E5;
+  font-family: 'Roboto Slab', serif;
 }
 
 .App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  background-color: #2D76E5;
+}
+
+.login-page-container,
+.forpass-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.login-page-container h1{
+  font-size: 30px;
+  padding-top: 5vh;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-form-container div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-container label {
+  margin : 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.login-form-container input,
+.forpass-form-container input{
+  padding: 10px;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 13px;
+  width: 20vw;
+  height: 1.5vh;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  top: 49%;
+  margin-left: 39vh;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.login-form-container h5{
+  display: flex;
+  align-items: flex-start;
+  font-weight: lighter;
+}
+
+.login-form-container button {
+  padding: 10px 40px;
+  background-color: #2D76E5;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+
+.centered-icon{
+  position: relative;
+  margin-top: 5vh;
+}
+
+.padlock-icon{
+  font-size: 90px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 100%;
+}
+
+.forpass-page-container h1{
+  font-size: 23px;
+  font-weight: normal;
+}
+
+.forpass-page-container p{
+  width: 250px;
+  font-size: 13px;
+  color: #898989;
+  margin-top: -8px;
+}
+
+.forpass-form-container label{
+  margin : 0 10px 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
 }
