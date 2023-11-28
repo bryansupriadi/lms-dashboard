@@ -1,15 +1,29 @@
 .header-container {
     display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 90vh;
 }
 
-.header-container img {
-    width: 34px;
-    height: 34px;
+.left-content h2 {
+    color: #fff;
+    font-size: 25px;
 }
 
-.header-container p {
+.right-content{
+    display: flex;
+}
+
+.right-content img {
+    width: 30px;
+    height: 30px;
+}
+
+.right-content p {
+    font-size: 16px;
     background-color: #fff;
     color: #00B9E3;
     border-radius: 10px;
     text-align: center;
+    padding: 10px;
 }

@@ -17,26 +17,29 @@ function HeaderContent() {
     }, []);
 
     const formatDateTime = (date) => {
-        const options = {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-          hour: "numeric",
-          minute: "numeric",
-        };
-        return date.toLocaleString("id-ID", options);
+        const day = date.getDate();
+        const month = date.toLocaleString("id-ID", { month: "long" });
+        const year = date.getFullYear();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+    
+        return `${day} ${month} ${year}, ${hour}:${minute}`;
       };
 
     return(
         <div className="App">
-        <div className="header-container">
-        <h2>Beranda</h2>
-        <img
-        src={hasNotification ? bellIcon : bellnotif}
-        alt="Notification Bell"
-        />
-        <p>{formatDateTime(currentDateTime)}</p>
-        </div>
+            <div className="header-container">
+                <section className='left-content'>
+                    <h2>Beranda</h2>
+                </section>
+                <section className='right-content'>
+                    <img
+                    src={hasNotification ? bellIcon : bellnotif}
+                    alt="Notification Bell"
+                    />
+                    <p>{formatDateTime(currentDateTime)}</p>
+                </section>
+            </div>
         </div>
     )
 }
