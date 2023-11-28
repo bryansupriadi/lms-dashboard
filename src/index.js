@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ForgotPassword from './Pages/ForgotPassword';
+import Dashboard from './Pages/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPassword/>,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard/>,
   },
 ])
 

@@ -1,0 +1,17 @@
+
+.sidebar-container {
+    text-align: left;
+}
+
+.sidebar-name {
+    color: #00B9E3;
+}
+
+.sidebar-name h6{
+    font-size: 16px;
+    margin: 0;
+}
+
+.logout-button-sidebar{
+    margin-top: 45vh;
+}

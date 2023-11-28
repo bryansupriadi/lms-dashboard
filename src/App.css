@@ -19,10 +19,19 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: space-between; */
   width: 80vw;
   height: 80vh;
   border-radius: 20px;
   background-color: #fff;
+}
+
+.sun-img{
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  margin-top: 5vh;
+  margin-right: 50vw;
 }
 
 .login-page-container h1{
@@ -107,7 +116,7 @@ html, body, #root {
   font-weight: normal;
 }
 
-.forpass-page-container p{
+.forpass-page-container span{
   width: 250px;
   font-size: 13px;
   color: #898989;
@@ -120,4 +129,56 @@ html, body, #root {
   flex-direction: column;
   align-items: flex-start;
   font-size: 14px;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.send-link-button{
+  padding: 10px 30px;
+  background-color: #2D76E5;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.go-back-button{
+  margin-top: 10px;
+  padding: 10px 30px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  border: 1px solid #000;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.footer-container{
+  position: absolute;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  left: 15vw;
+  bottom: 10vh;
+}
+
+.footer-container p{
+  font-size: 20px;
+}
+
+.footer-container li {
+  padding: 10px;
+}
+
+.saly-img {
+  position: absolute;
+  width: 30vw;
+  height: 60vh;
+  right: 8vh;
+  bottom: 7.5vh;
 }
