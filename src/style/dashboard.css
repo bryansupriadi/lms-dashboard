@@ -1,0 +1,15 @@
+.header-container {
+    display: flex;
+}
+
+.header-container img {
+    width: 34px;
+    height: 34px;
+}
+
+.header-container p {
+    background-color: #fff;
+    color: #00B9E3;
+    border-radius: 10px;
+    text-align: center;
+}

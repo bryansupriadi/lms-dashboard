@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { FaUser, FaChalkboardTeacher, FaSignOutAlt } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import Home from '../Assets/sidebar/Home (1).png';
 import Daftar from '../Assets/sidebar/Vector.png';
 import Detail from '../Assets/sidebar/icon-park_doc-search-two.png';
@@ -24,7 +24,7 @@ const SidebarContent = () => {
             )}
             <div className="sidebar-name">
               <h6>Dashboard</h6>
-              <h6>John Doe</h6>
+              <h6>User Name</h6>
             </div>
           </div>
         </MenuItem>
@@ -33,7 +33,7 @@ const SidebarContent = () => {
         <MenuItem icon={<img src={Detail} alt="detail"/>}>Detail Kelas</MenuItem>
       </Menu>
       <Menu iconShape="square" className="logout-button-sidebar">
-        <MenuItem icon={<img src={SignOut} alt= "signout"/>}>Log Out</MenuItem>
+        <MenuItem icon={<img src={SignOut} alt= "signout"/>}>Keluar</MenuItem>
       </Menu>
     </Sidebar>
   );

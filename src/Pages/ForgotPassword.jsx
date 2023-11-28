@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GiPadlock } from 'react-icons/gi';
 import Footer from "../Component/Footer";
 import Saly from '../Assets/Saly1.png';
