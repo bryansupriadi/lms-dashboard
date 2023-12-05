@@ -28,48 +28,49 @@ function LoginForm() {
   }
 
   return (
-    <div className="App">
-      <div className="login-page-container">
-        <img src={Sun} alt="sun" className="sun-img"/>
-        <h1>Selamat Datang!</h1>
-        <section className="login-form-container">
-          <form>
-            <div className="email-input">
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={handleEmailChange}
-                />
+      <div className="login-page-container d-flex flex-column align-items-center justify-content-center text-center">
+        <img src={Sun} alt="sun" className="sun-img position-absolute ms-auto" style={{ width: "140px", height: "140px", marginBottom: "50vh", left: "30vh" }} />
+        <h1 className="display-6 mb-5" style={{marginBottom : "80px"}}>Selamat Datang!</h1>
+        <div className="login-form-container mb-5">
+        <form>
+          <div className="mb-3 text-start">
+            <label htmlFor="email" className="form-label ">Email</label>
+            <input
+              type="email"
+              className="form-control border border-black"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+              style={{width : "300px"}}
+            />
+          </div>
+          <div className="mb-5 text-start">
+            <label htmlFor="password" className="form-label">Kata Sandi</label>
+            <div className="password-input-container">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="form-control border border-black"
+                id="password"
+                value={password}
+                onChange={handlePasswordChange}
+                style={{width : "300px"}}
+              />
+              <span onClick={toggleShowPassword} className="password-icon">
+                {showPassword ? (
+                  <AiOutlineEye style={{ opacity: "0.6" }} />
+                ) : (
+                  <AiOutlineEyeInvisible style={{ opacity: "0.6" }} />
+                )}
+              </span>
             </div>
-            <div className="password-input">
-                <label htmlFor="password">Kata Sandi</label>
-                <input
-                    type={showPassword ? "text" : "password"}
-                    id="password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                />
-                <span onClick={toggleShowPassword} className="password-icon">
-                    {showPassword ? <AiOutlineEye style={{opacity: "0.6"}} /> : <AiOutlineEyeInvisible style={{opacity: "0.6"}} />}
-                </span>
-            </div>
-                <h5 style={{ margin: "10px 0 30px 10px" }}>
-                    Lupa kata sandi?
-                    <Link
-                        to="/forgot-password"
-                        style={{ textDecoration: "none", fontWeight: "lighter", marginLeft: "5px"}}
-                    >
-                        Hubungi kami
-                    </Link>
-                </h5>
-            <button onClick={handleSubmit}>Masuk</button>
-          </form>
-        </section>
-        <Footer/>
-        <img src={Saly} alt="saly" className="saly-img"/>
+          </div>
+          <button type="button" className="btn btn-primary " style={{width: "150px"}} onClick={handleSubmit}>
+            Masuk
+          </button>
+        </form>
       </div>
+      <Footer />
+      <img src={Saly} alt="saly" className="saly-img" />
     </div>
   );
 }

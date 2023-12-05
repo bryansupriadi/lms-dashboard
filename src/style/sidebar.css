@@ -1,17 +1,20 @@
 
-.sidebar-container {
-    text-align: left;
-}
+    .sidebar-container {
+        text-align: left;
+        position: fixed;
+        /* margin-top: 20px; */
+    }
 
-.sidebar-name {
-    color: #00B9E3;
-}
+    .sidebar-name {
+        color: #00B9E3;
+    }
 
-.sidebar-name h6{
-    font-size: 16px;
-    margin: 0;
-}
+    .sidebar-name h6{
+        font-size: 16px;
+        margin: 0;
+    }
 
-.logout-button-sidebar{
-    margin-top: 45vh;
-}
+    .logout-button-sidebar {
+        position: absolute; 
+        bottom: 10px; 
+    }

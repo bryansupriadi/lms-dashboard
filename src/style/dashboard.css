@@ -1,29 +1,26 @@
 .header-container {
+    top: 0;
+    left: 0;
+    width: 90%;
+    padding: 10px; 
+    z-index: 1000; 
+}
+
+.dashboard-page-container,
+.ongoing-page-container {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    margin-bottom: 90vh;
+}   
+
+.content-dashboard {
+    width: 78.5vw;
+    height: 68vh;
+    margin-left: 19vw;
+    margin-top: 2.9vh;
 }
 
-.left-content h2 {
-    color: #fff;
-    font-size: 25px;
-}
-
-.right-content{
-    display: flex;
-}
-
-.right-content img {
-    width: 30px;
-    height: 30px;
-}
-
-.right-content p {
-    font-size: 16px;
-    background-color: #fff;
-    color: #00B9E3;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
+.content-upcoming {
+    width: 78.5vw;
+    height: 15vh;
+    margin-left: 19vw;
+    margin-top: 8.9vh;
 }

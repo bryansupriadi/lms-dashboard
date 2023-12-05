@@ -22,25 +22,29 @@ function HeaderContent() {
         const year = date.getFullYear();
         const hour = date.getHours();
         const minute = date.getMinutes();
+        const formattedMinute = String(minute).padStart(2, '0');;
     
-        return `${day} ${month} ${year}, ${hour}:${minute}`;
+        return `${day} ${month} ${year}, ${hour}:${formattedMinute}`;
       };
 
     return(
-        <div className="App">
-            <div className="header-container">
-                <section className='left-content'>
-                    <h2>Beranda</h2>
-                </section>
-                <section className='right-content'>
-                    <img
-                    src={hasNotification ? bellIcon : bellnotif}
-                    alt="Notification Bell"
-                    />
-                    <p>{formatDateTime(currentDateTime)}</p>
-                </section>
-            </div>
-        </div>
+        <div class="header-container d-flex justify-content-between fixed-top" style={{marginLeft: "19vh"}}>
+        <section class='left-content' style={{paddingTop: "2vh", marginLeft: "21vh"}}>
+            <h2 class="text-white fs-3">Beranda</h2>
+        </section>
+        <section class='right-content d-flex pt-2'>
+            <img
+                src={hasNotification ? bellIcon : bellnotif}
+                alt="Notification Bell"
+                class="img-fluid"
+                style={{width: "30px", height: "30px", marginRight: "30px", marginTop: "1vh", marginLeft: "2vh"}}
+            />
+            <p class="notification-text ms-auto bg-white text-primary rounded-3 p-2 text-center" style={{fontSize: "16px"}}>
+                {formatDateTime(currentDateTime)}
+            </p>
+        </section>
+    </div>
+    
     )
 }
 

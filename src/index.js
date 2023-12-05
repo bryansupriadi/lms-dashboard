@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ForgotPassword from './Pages/ForgotPassword';
 import Dashboard from './Pages/Dashboard';
+import Ongoing from './Pages/Ongoing';
+import Finished from './Pages/Finished';
 
 const router = createBrowserRouter([
   {
@@ -13,12 +15,16 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/forgot-password",
-    element: <ForgotPassword/>,
-  },
-  {
     path: "/dashboard",
     element: <Dashboard/>,
+  },
+  {
+    path: "/kelas/sedang-berjalan",
+    element: <Ongoing/>,
+  },
+  {
+    path: "/kelas/sudah-selesai",
+    element: <Finished/>,
   },
 ])
 
