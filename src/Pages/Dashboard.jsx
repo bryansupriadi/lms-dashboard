@@ -1,3 +1,4 @@
+import CustomCalendar from "../Component/Calendar";
 import HeaderContent from "../Component/Header";
 import SidebarContent from "../Component/SidebarContent";
 import UpcomingClass from "../Component/UpcomingClass";
@@ -18,7 +19,7 @@ function Dashboard() {
           <div className="content-container d-flex flex-column">
           <UpcomingClass upcomingClassInfo={upcomingClassInfo}/>
           <div className="content-dashboard d-flex flex-column align-items-center justify-content-center text-center bg-white rounded-3">
-          <h1>Test 123</h1>
+          <CustomCalendar/>
           </div>
           </div>
           </div>
