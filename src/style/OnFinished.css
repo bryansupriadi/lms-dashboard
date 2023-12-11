@@ -1,0 +1,28 @@
+.content-ongoing,
+.content-finish {
+    width: 78.5vw;
+    height: 85vh;
+    margin-left: 19vw;
+    margin-top: 10vh;
+}   
+
+
+.card-container {
+    padding: 15px;
+    font-size: 14px;
+}
+.card {
+    width: 75vw;
+    height: 22vh;
+    margin-bottom: 20px;
+    padding: 5px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+}
+
+.pagination {
+    position: fixed;
+    bottom: 0;
+    left: 58%;
+    padding: 10px;
+  }

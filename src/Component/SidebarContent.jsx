@@ -3,6 +3,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { FaUser } from "react-icons/fa";
 import Home from '../Assets/sidebar/Home (1).png';
 import Daftar from '../Assets/sidebar/Vector.png';
+import Kelas from '../Assets/sidebar/training.png';
 import SignOut from '../Assets/sidebar/Sign_out_squre.png';
 import '../style/sidebar.css';
 import { Link } from "react-router-dom";
@@ -39,6 +40,9 @@ const SidebarContent = () => {
               <Link to="/kelas/sudah-selesai" style={{textDecoration: 'none', color: '#000'}}>Sudah Selesai</Link>
             </MenuItem>
           </SubMenu>
+          <MenuItem icon={<img src={Kelas} alt="kelas"/>}>
+          <Link to="/info-kelas" style={{textDecoration: 'none', color: "#000"}}>Info Kelas</Link>
+        </MenuItem>
       </Menu>
       <Menu iconShape="square" className="logout-button-sidebar">
         <MenuItem icon={<img src={SignOut} alt= "signout"/>}>
