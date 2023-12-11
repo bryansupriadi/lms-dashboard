@@ -3,6 +3,7 @@ import HeaderClass from "../Component/HeaderClass";
 import SidebarContent from "../Component/SidebarContent";
 import CardPart from "../Component/ClassCard";
 import Pagination from "../Component/Pagination";
+import { Link } from "react-router-dom";
 import '../style/OnFinished.css';
 
 function SudahSelesai() {
@@ -14,32 +15,35 @@ function SudahSelesai() {
             status: 'Offline', 
             classCode: 'LB-02', 
             tempat: 'Menara Tower', 
-            time: '22 October 2023 (10:00-11:30)' 
+            date: '22 October 2023',
+            time: '10:00-11:30', 
         },
         {   topic: 'Pelatihan Microsoft Office Excel', 
             status: 'Online', 
             classCode: 'LC-02', 
             zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            time: '22 November 2023 (10:00-11:30)' 
+            date: '22 November 2023',
+            time: '10:00-11:30', 
         }, 
         {   topic: 'Internet untuk Bisnis', 
             status: 'Offline', 
             classCode: 'LD-02', 
             tempat: 'Auditorium', 
-            time: '4 December 2023 (10:00-11:30)' 
+            date: '4 December 2023',
+            time: '10:00-11:30', 
         },
       ]);
 
       const sortedDoneData = [...doneData].sort((a, b) => {
-        const timeA = new Date(a.time);
-        const timeB = new Date(b.time);
+        const timeA = new Date(a.date);
+        const timeB = new Date(b.date);
         return timeB - timeA;
       });
 
-      const formattedTime = (time) => {
-          const day = time.getDate();
-          const month = time.toLocaleString("id-ID", { month: "long" });
-          const year = time.getFullYear();
+      const formattedTime = (date) => {
+          const day = date.getDate();
+          const month = date.toLocaleString("id-ID", { month: "long" });
+          const year = date.getFullYear();
       
           return `${day} ${month} ${year}`;
       };
@@ -47,7 +51,7 @@ function SudahSelesai() {
       const formattedSortedDoneData = sortedDoneData.map(item => {
           return {
               ...item,
-              time: formattedTime(new Date(item.time))
+              date: formattedTime(new Date(item.date))
           };
       });
 
@@ -62,7 +66,9 @@ function SudahSelesai() {
         <div className="finish-page-container">
         <HeaderClass />
         <section className="content-finish d-flex flex-column align-items-center text-start bg-white rounded-3">
-          <CardPart data={currentDone} />
+        <Link to="/kelas-selesai" style={{ textDecoration: 'none' }}>
+            <CardPart data={currentDone} page="kelas-selesai"/>
+        </Link>
           {formattedSortedDoneData.length > donePerPage && (
             <Pagination
             todosPerPage={donePerPage}

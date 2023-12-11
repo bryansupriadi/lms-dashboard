@@ -1,5 +1,6 @@
 .content-ongoing,
-.content-finish {
+.content-finish,
+.content-detail {
     width: 78.5vw;
     height: 85vh;
     margin-left: 19vw;

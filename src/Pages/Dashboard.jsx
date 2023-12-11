@@ -6,9 +6,9 @@ import '../style/dashboard.css';
 
 function Dashboard() {
   const upcomingClassInfo = {
-    classTime: "10:00 AM",
-    className: "LB01",
-    topic: "Internet Untuk Bisnis",
+    classTime: "10:00-11:30",
+    className: "LC-02",
+    topic: "Pelatihan Microsoft Office Excel",
   };
 
     return (
