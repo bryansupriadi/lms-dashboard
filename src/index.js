@@ -19,11 +19,11 @@ const router = createBrowserRouter([
     element: <Dashboard/>,
   },
   {
-    path: "/kelas/sedang-berjalan",
+    path: "/kelas-berlangsung",
     element: <Ongoing/>,
   },
   {
-    path: "/kelas/sudah-selesai",
+    path: "/kelas-selesai",
     element: <Finished/>,
   },
 ])
