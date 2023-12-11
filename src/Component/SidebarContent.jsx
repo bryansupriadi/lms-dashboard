@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { FaUser } from "react-icons/fa";
 import Home from '../Assets/sidebar/Home (1).png';
-import Daftar from '../Assets/sidebar/Vector.png';
+import Berjalan from '../Assets/sidebar/writing.png';
+import Selesai from '../Assets/sidebar/done.png';
 import Kelas from '../Assets/sidebar/training.png';
 import SignOut from '../Assets/sidebar/Sign_out_squre.png';
 import '../style/sidebar.css';
@@ -30,18 +31,16 @@ const SidebarContent = () => {
           </div>
         </MenuItem>
         <MenuItem icon={<img src={Home} alt="home"/>}>
-        <Link to="/dashboard" style={{textDecoration: 'none', color: "#000"}}>Dashboard</Link>
+          <Link to="/dashboard" style={{textDecoration: 'none', color: "#000"}}>Dashboard</Link>
         </MenuItem>
-          <SubMenu title="Daftar Kelas" icon={<img src={Daftar} alt="daftar"/>}>
-            <MenuItem>
-              <Link to="/kelas/sedang-berjalan" style={{textDecoration: 'none', color: '#000'}}>Sedang Berjalan</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to="/kelas/sudah-selesai" style={{textDecoration: 'none', color: '#000'}}>Sudah Selesai</Link>
-            </MenuItem>
-          </SubMenu>
-          <MenuItem icon={<img src={Kelas} alt="kelas"/>}>
+        <MenuItem icon={<img src={Kelas} alt="kelas"/>}>
           <Link to="/info-kelas" style={{textDecoration: 'none', color: "#000"}}>Info Kelas</Link>
+        </MenuItem>
+        <MenuItem icon={<img src={Berjalan} alt="berlangsung"/>}>
+          <Link to="/kelas-berlangsung" style={{textDecoration: 'none', color: '#000'}}>Kelas Berlangsung</Link>
+        </MenuItem>
+        <MenuItem icon={<img src={Selesai} alt="selesai"/>}>
+          <Link to="/kelas-selesai" style={{textDecoration: 'none', color: '#000'}}>Kelas Selesai</Link>
         </MenuItem>
       </Menu>
       <Menu iconShape="square" className="logout-button-sidebar">

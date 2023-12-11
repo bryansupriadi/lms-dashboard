@@ -8,11 +8,17 @@ const CardPart = ({ title, data }) => (
           <div className="class-code pb-1">
           Kode Kelas <span style={{ marginLeft: '30px' }}>{item.classCode}</span>
         </div>
-        <div className="zoom-link pb-1">
-          Link Zoom <span style={{ marginLeft: '32px' }}><a href={item.zoomLink} target="_blank" rel="noopener noreferrer">{item.zoomLink}</a></span>
-        </div>
+        {item.status === 'Online' ? (
+          <div className="zoom-link pb-1">
+              Link Zoom <span style={{ marginLeft: '32px' }}><a href={item.zoomLink} target="_blank" rel="noopener noreferrer">{item.zoomLink}</a></span>
+          </div>
+          ) : (
+          <div className="tempat pb-1">
+              Tempat <span style={{ marginLeft: '53px' }}>{item.tempat}</span>
+          </div>
+        )}
         <div className="time">
-          Waktu <span style={{ marginLeft: '62px' }}>{item.time}</span>
+          Waktu <span style={{ marginLeft: '59px' }}>{item.time}</span>
         </div>
         </div>
       ))}

@@ -14,32 +14,46 @@ function SedangBerjalan() {
             status: 'Online', 
             classCode: 'LB-02', 
             zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            time: '30 November 2023 (10:00-11:30)' 
+            time: '1 January 2024 (10:00-11:30)' 
         }, 
         {   topic: 'Pelatihan Microsoft Office Excel', 
             status: 'Online', 
             classCode: 'LC-02', 
             zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            time: '24 November 2023 (10:00-11:30)' 
+            time: '20 December 2023 (10:00-11:30)' 
         },  
         {   topic: 'Internet untuk Bisnis', 
             status: 'Online', 
             classCode: 'LD-02', 
             zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            time: '13 November 2023 (10:00-11:30)' 
+            time: '4 February 2024 (10:00-11:30)' 
         }, 
       ]);
 
       const sortedTodoData = [...todoData].sort((a, b) => {
-        // Ubah format waktu ke objek Date untuk membandingkan
         const timeA = new Date(a.time);
         const timeB = new Date(b.time);
         return timeA - timeB;
-        });
+      });
+
+      const formattedTime = (time) => {
+          const day = time.getDate();
+          const month = time.toLocaleString("id-ID", { month: "long" });
+          const year = time.getFullYear();
+      
+          return `${day} ${month} ${year}`;
+      };
+
+      const formattedSortedTodoData = sortedTodoData.map(item => {
+          return {
+              ...item,
+              time: formattedTime(new Date(item.time))
+          };
+      });
 
       const indexOfLastTodo = currentPage * todosPerPage;
       const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
-      const currentTodos = sortedTodoData.slice(indexOfFirstTodo, indexOfLastTodo);
+      const currentTodos = formattedSortedTodoData.slice(indexOfFirstTodo, indexOfLastTodo);
       const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return(
@@ -49,10 +63,10 @@ function SedangBerjalan() {
         <HeaderClass />
         <section className="content-ongoing d-flex flex-column align-items-center text-start bg-white rounded-3">
           <CardPart data={currentTodos} />
-          {sortedTodoData.length > todosPerPage && (
+          {formattedSortedTodoData.length > todosPerPage && (
             <Pagination
             todosPerPage={todosPerPage}
-            totalTodos={sortedTodoData.length}
+            totalTodos={formattedSortedTodoData.length}
             paginate={paginate}
             />
           )}
