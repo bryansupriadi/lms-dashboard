@@ -49,11 +49,13 @@ function SedangBerjalan() {
         <HeaderClass />
         <section className="content-ongoing d-flex flex-column align-items-center text-start bg-white rounded-3">
           <CardPart data={currentTodos} />
-          <Pagination
-          todosPerPage={todosPerPage}
-          totalTodos={sortedTodoData.length}
-          paginate={paginate}
-        />
+          {sortedTodoData.length > todosPerPage && (
+            <Pagination
+            todosPerPage={todosPerPage}
+            totalTodos={sortedTodoData.length}
+            paginate={paginate}
+            />
+          )}
         </section>
         </div>
         </div>
