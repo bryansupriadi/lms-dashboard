@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import Ongoing from './Pages/Ongoing';
 import Finished from './Pages/Finished';
+import ClassInfo from './Pages/ClassInfo';
 import ClassDetail from './Pages/ClassDetail';
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/kelas-selesai",
     element: <Finished/>,
+  },
+  {
+    path: "/info-kelas",
+    element: <ClassInfo/>,
   },
   {
     path: "/:page/:topic/:classCode",

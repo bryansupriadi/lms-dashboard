@@ -1,3 +1,4 @@
+import ContentList from "../Component/ContentList";
 import HeaderClass from "../Component/HeaderClass";
 import SidebarContent from "../Component/SidebarContent";
 import { useParams } from "react-router-dom";
@@ -19,6 +20,7 @@ function ClassDetail() {
         <HeaderClass/>
         <div className="content-detail d-flex flex-column align-items-start text-start bg-white rounded-3">
             <span className="fs-4 p-3" style={{fontWeight: '700'}}>Topik : {convertToTitleCase(topic)}</span>
+            <ContentList/>
         </div>
         <div>
         </div>

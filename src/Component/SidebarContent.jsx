@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { FaUser } from "react-icons/fa";
 import Home from '../Assets/sidebar/Home (1).png';
 import Berjalan from '../Assets/sidebar/writing.png';
