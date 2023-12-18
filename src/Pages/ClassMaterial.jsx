@@ -19,7 +19,7 @@ function ClassDetail() {
         <div className="class-detail-page-container">
         <HeaderClass/>
         <div className="content-detail d-flex flex-column align-items-start text-start bg-white rounded-3">
-            <span className="fs-4 p-3" style={{fontWeight: '700'}}>Topik : {convertToTitleCase(topic)}</span>
+            <span className="fs-4" style={{fontWeight: '700', paddingLeft: '45px', paddingTop: '20px'}}>Topik : {convertToTitleCase(topic)}</span>
             <ContentList/>
         </div>
         <div>
