@@ -9,7 +9,7 @@ import Dashboard from './Pages/Dashboard';
 import Ongoing from './Pages/Ongoing';
 import Finished from './Pages/Finished';
 import ClassInfo from './Pages/ClassInfo';
-import ClassMaterial from './Pages/ClassDetail';
+import ClassMaterial from './Pages/ClassMaterial';
 
 const router = createBrowserRouter([
   {
