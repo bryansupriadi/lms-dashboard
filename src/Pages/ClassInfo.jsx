@@ -9,7 +9,7 @@ function InfoKelas() {
     const [currentPage, setCurrentPage] = useState(1);
     const [todosPerPage] = useState(3);
 
-    const [todoData, setTodoData] = useState([
+    const [todoData] = useState([
         {
             class: 'LB-02',
             topics: ['the beginning of', 'the middle of', 'the end of'],
@@ -30,40 +30,20 @@ function InfoKelas() {
         },
     ]);
 
-    // Sort by the first date in the 'dates' array
-    const sortByDate = (a, b) => a.dates[0].localeCompare(b.dates[0]);
-
-    // Sort by the first name in the 'names' array
-    const sortByName = (a, b) => a.names[0].localeCompare(b.names[0]);
-
-    // Sort by 'class'
-    const sortByClass = (a, b) => a.class.localeCompare(b.class);
-
-    // Sort the data by date
-    const sortedByDate = [...todoData].sort(sortByDate);
-
-    // Sort the data by name
-    const sortedByName = [...todoData].sort(sortByName);
-
-    // Sort the data by class
-    const sortedByClass = [...todoData].sort(sortByClass);
-
     const indexOfLastTodo = currentPage * todosPerPage;
     const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
 
-    // Get current todos for displaying
+    const sortedByDate = [...todoData].sort((a, b) => a.dates[0].localeCompare(b.dates[0]));
+
     const currentTodos = sortedByDate.slice(indexOfFirstTodo, indexOfLastTodo).map(todo => ({
         ...todo,
-        // Combine 'topics' and 'dates' arrays into an array of objects
         topicsAndDates: todo.topics.map((topic, index) => ({
             topic,
             date: todo.dates[index],
-        })).sort(sortByDate),
-        // Sort 'names' array
-        sortedNames: todo.names.sort(sortByName),
+        })).sort((a, b) => a.date.localeCompare(b.date)),
+        sortedNames: todo.names.sort((a, b) => a.localeCompare(b)),
     }));
 
-    // Pagination function
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
@@ -72,7 +52,6 @@ function InfoKelas() {
             <div className="ongoing-page-container">
                 <HeaderClass />
                 <section className="content-ongoing d-flex flex-column align-items-center text-start bg-white rounded-3">
-                    {/* Assuming you have a CardPart component that accepts 'data' prop */}
                     <CardPart data={currentTodos} />
                     <Pagination
                         todosPerPage={todosPerPage}
