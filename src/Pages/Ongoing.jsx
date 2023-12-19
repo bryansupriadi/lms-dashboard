@@ -20,7 +20,7 @@ function SedangBerjalan() {
         }, 
         {   topic: 'Pelatihan Microsoft Office Excel', 
             status: 'Online', 
-            classCode: 'LC-02', 
+            classCode: 'LC-02',
             zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
             date: '20 December 2023',
             time: '10:00-11:30' 

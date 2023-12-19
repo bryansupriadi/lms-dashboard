@@ -9,7 +9,7 @@ import Dashboard from './Pages/Dashboard';
 import Ongoing from './Pages/Ongoing';
 import Finished from './Pages/Finished';
 import ClassInfo from './Pages/ClassInfo';
-import ClassMaterial from './Pages/ClassMaterial';
+import ClassDetail from './Pages/ClassDetail';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/:page/:topic/:classCode",
-    element: <ClassMaterial/>,
+    element: <ClassDetail/>,
   },
 ])
 
