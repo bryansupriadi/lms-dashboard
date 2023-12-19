@@ -12,19 +12,19 @@ function InfoKelas() {
     const [todoData] = useState([
         {
             class: 'LB-02',
-            topics: ['the beginning of', 'the middle of', 'the end of'],
+            topics: ['Internet untuk Bisnis', 'Cara Mengelola Bisnis', 'Bisnis Era Modern'],
             dates: ['30-3-2023', '14-2-2023', '34-3-2023'],
             names: ['ado', 'ada', 'adi', 'adu', 'ade'],
         },
         {
             class: 'LC-02',
-            topics: ['Intro to React', 'State Management', 'Hooks'],
+            topics: ['Penggunaan Sosial Media', 'Pemanfaatan Sosial Media sebagai Promosi', 'Marketing Era Modern'],
             dates: ['22-3-2023', '18-3-2023', '15-3-2023'],
             names: ['john', 'doe', 'mary', 'jane'],
         },
         {
             class: 'LD-02',
-            topics: ['JavaScript Fundamentals', 'ES6 Features', 'Promises'],
+            topics: ['Manfaat E-Commerce', 'Online Marketplace', 'Keamanan Online Marketplace'],
             dates: ['10-3-2023', '5-3-2023', '1-3-2023'],
             names: ['bob', 'alice', 'charlie'],
         },
@@ -33,13 +33,15 @@ function InfoKelas() {
     const indexOfLastTodo = currentPage * todosPerPage;
     const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
 
-    const sortedByDate = [...todoData].sort((a, b) => a.dates[0].localeCompare(b.dates[0]));
+    // Sort by 'class' property in ascending order
+    const sortedByClass = [...todoData].sort((a, b) => a.class.localeCompare(b.class));
 
-    const currentTodos = sortedByDate.slice(indexOfFirstTodo, indexOfLastTodo).map(todo => ({
+    // Create currentTodos array based on the sorted 'class' order
+    const currentTodos = sortedByClass.slice(indexOfFirstTodo, indexOfLastTodo).map(todo => ({
         ...todo,
-        topicsAndDates: todo.topics.map((topic, index) => ({
-            topic,
-            date: todo.dates[index],
+        topicsAndDates: todo.dates.map((date, index) => ({
+            date,
+            topic: todo.topics[index],
         })).sort((a, b) => a.date.localeCompare(b.date)),
         sortedNames: todo.names.sort((a, b) => a.localeCompare(b)),
     }));
@@ -55,7 +57,7 @@ function InfoKelas() {
                     <CardPart data={currentTodos} />
                     <Pagination
                         todosPerPage={todosPerPage}
-                        totalTodos={sortedByDate.length}
+                        totalTodos={sortedByClass.length}
                         paginate={paginate}
                     />
                 </section>
