@@ -7,11 +7,12 @@ import SiswaComponent from "../Component/Student";
 import NilaiComponent from "../Component/Score";
 
 
-function ContentList() {
+function ContentList({onMenuClick}) {
   const [activeMenu, setActiveMenu] = useState(null);
 
   const handleMenuClick = (index) => {
     setActiveMenu(index);
+    onMenuClick();
   };
 
   const renderComponent = () => {
