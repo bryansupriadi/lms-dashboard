@@ -21,7 +21,7 @@ const CardPart = ({ title, data, page }) => (
           </div>
           ) : (
           <div className="tempat pb-1">
-              Tempat <span style={{ marginLeft: '53px' }}>{item.tempat}</span>
+              Tempat <span style={{ marginLeft: '53px' }}>{item.place}</span>
           </div>
         )}
         <div className="time">

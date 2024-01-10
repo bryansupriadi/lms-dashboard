@@ -4,3 +4,27 @@
     margin: auto;
     margin-top: 10px;
 }
+
+.material-ppt{
+    margin-left: 7vh;
+}
+
+.material-video,
+.meeting-date,
+.meeting-loc,
+.meeting-link{
+    margin-left: 8vh;
+}
+
+.material-ppt img {
+    height: 40px;
+    width: 40px
+}
+
+.material-video img,
+.meeting-date img,
+.meeting-loc img,
+.meeting-link img{
+    height: 30px;
+    width: 30px;
+}

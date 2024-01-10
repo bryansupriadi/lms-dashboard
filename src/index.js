@@ -10,6 +10,12 @@ import Ongoing from './Pages/Ongoing';
 import Finished from './Pages/Finished';
 import ClassInfo from './Pages/ClassInfo';
 import ClassDetail from './Pages/ClassDetail';
+import Details from './Pages/Details';
+
+function handleMenuClick(index) {
+  // Your implementation here
+  console.log(`Menu ${index} clicked`);
+}
 
 const router = createBrowserRouter([
   {
@@ -35,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/:page/:topic/:classCode",
     element: <ClassDetail/>,
+  },
+  {
+    path: "/:page/:topic/:classCode/:label",
+    element: <Details/>,
   },
 ])
 

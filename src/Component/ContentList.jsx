@@ -5,14 +5,19 @@ import ForumComponent from "../Component/Forum";
 import TugasComponent from "../Component/Task";
 import SiswaComponent from "../Component/Student";
 import NilaiComponent from "../Component/Score";
+import {useNavigate, useParams} from 'react-router-dom'
 
 
 function ContentList({onMenuClick}) {
   const [activeMenu, setActiveMenu] = useState(null);
+  const { page, topic, classCode } = useParams();
+  const navigate = useNavigate();
 
   const handleMenuClick = (index) => {
     setActiveMenu(index);
     onMenuClick();
+    const label = data[index].label.toLowerCase();
+    navigate(`/${page}/${topic}/${classCode}/${label}`);
   };
 
   const renderComponent = () => {
@@ -45,7 +50,7 @@ function ContentList({onMenuClick}) {
 
   return (
     <div className="navigation-bar">
-      <ul className="list-unstyled d-flex" style={{ fontSize: '17px', paddingLeft: '25px', marginTop: '10px' }}>
+      <ul className="list-unstyled d-flex" style={{ fontSize: '17px', paddingLeft: '25px', marginTop: '10px', borderBottom: '1px solid #666' }}>
         {data.map((item) => (
           <li
             key={item.id}
@@ -69,3 +74,4 @@ function ContentList({onMenuClick}) {
 }
 
 export default ContentList;
+

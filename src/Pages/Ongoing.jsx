@@ -5,36 +5,15 @@ import CardPart from "../Component/ClassCard";
 import Pagination from "../Component/Pagination";
 import '../style/OnFinished.css';
 import { Link } from "react-router-dom";
+import { todoTemp } from "../data";
+
 
 function SedangBerjalan() {
     const [currentPage, setCurrentPage] = useState(1);
     const [todosPerPage] = useState(3);
 
-    const [todoData, setTodoData] = useState([
-        {   topic: 'Pelatihan Microsoft Office Excel', 
-            status: 'Online', 
-            classCode: 'LB-02', 
-            zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            date: '1 January 2024',
-            time: '10:00-11:30' 
-        }, 
-        {   topic: 'Pelatihan Microsoft Office Excel', 
-            status: 'Online', 
-            classCode: 'LC-02',
-            zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            date: '20 December 2023',
-            time: '10:00-11:30' 
-        },  
-        {   topic: 'Internet untuk Bisnis', 
-            status: 'Online', 
-            classCode: 'LD-02', 
-            zoomLink: 'https://binus.zoom.us/j/97970210339?pwd=NU04NWMxcDBta200TTBEODBp...', 
-            date: '4 February 2024',
-            time: '10:00-11:30' 
-        }, 
-      ]);
 
-      const sortedTodoData = [...todoData].sort((a, b) => {
+      const sortedTodoData = [...todoTemp].sort((a, b) => {
         const timeA = new Date(a.date);
         const timeB = new Date(b.date);
         return timeA - timeB;
