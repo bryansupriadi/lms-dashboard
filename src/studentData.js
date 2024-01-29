@@ -2,6 +2,7 @@ export const studentData = [
 	{
 		"id": 1,
 		"studentName": "Wesley",
+		"classCode": "LB-02",
 		"task": 97,
 		"preTest": 75,
 		"postTest": 63
@@ -9,6 +10,7 @@ export const studentData = [
 	{
 		"id": 2,
 		"studentName": "Mechelle",
+		"classCode": "LC-02",
 		"task": 69,
 		"preTest": 98,
 		"postTest": 58
@@ -16,6 +18,7 @@ export const studentData = [
 	{
 		"id": 3,
 		"studentName": "Skyler",
+		"classCode": "LB-02",
 		"task": 78,
 		"preTest": 56,
 		"postTest": 75
@@ -23,6 +26,7 @@ export const studentData = [
 	{
 		"id": 4,
 		"studentName": "Kirsten",
+		"classCode": "LD-02",
 		"task": 78,
 		"preTest": 51,
 		"postTest": 54
@@ -30,6 +34,7 @@ export const studentData = [
 	{
 		"id": 5,
 		"studentName": "Caryn",
+		"classCode": "LC-02",
 		"task": 72,
 		"preTest": 50,
 		"postTest": 53
@@ -37,6 +42,7 @@ export const studentData = [
 	{
 		"id": 6,
 		"studentName": "Ulysses",
+		"classCode": "LC-02",
 		"task": 91,
 		"preTest": 55,
 		"postTest": 51
@@ -44,6 +50,7 @@ export const studentData = [
 	{
 		"id": 7,
 		"studentName": "Noah",
+		"classCode": "LB-02",
 		"task": 52,
 		"preTest": 90,
 		"postTest": 78
@@ -51,6 +58,7 @@ export const studentData = [
 	{
 		"id": 8,
 		"studentName": "Hakeem",
+		"classCode": "LD-02",
 		"task": 80,
 		"preTest": 72,
 		"postTest": 55
@@ -58,6 +66,7 @@ export const studentData = [
 	{
 		"id": 9,
 		"studentName": "Gwendolyn",
+		"classCode": "LC-02",
 		"task": 70,
 		"preTest": 59,
 		"postTest": 51
@@ -65,6 +74,7 @@ export const studentData = [
 	{
 		"id": 10,
 		"studentName": "Delilah",
+		"classCode": "LD-02",
 		"task": 57,
 		"preTest": 53,
 		"postTest": 54
@@ -72,6 +82,7 @@ export const studentData = [
 	{
 		"id": 11,
 		"studentName": "Desirae",
+		"classCode": "LC-02",
 		"task": 70,
 		"preTest": 58,
 		"postTest": 53
@@ -79,6 +90,7 @@ export const studentData = [
 	{
 		"id": 12,
 		"studentName": "Jasmine",
+		"classCode": "LB-02",
 		"task": 73,
 		"preTest": 88,
 		"postTest": 77
@@ -86,6 +98,7 @@ export const studentData = [
 	{
 		"id": 13,
 		"studentName": "Clinton",
+		"classCode": "LD-02",
 		"task": 99,
 		"preTest": 87,
 		"postTest": 51
@@ -93,6 +106,7 @@ export const studentData = [
 	{
 		"id": 14,
 		"studentName": "Sharon",
+		"classCode": "LC-02",
 		"task": 51,
 		"preTest": 84,
 		"postTest": 58
@@ -100,6 +114,7 @@ export const studentData = [
 	{
 		"id": 15,
 		"studentName": "Castor",
+		"classCode": "LD-02",
 		"task": 78,
 		"preTest": 67,
 		"postTest": 52
@@ -107,6 +122,7 @@ export const studentData = [
 	{
 		"id": 16,
 		"studentName": "Chandler",
+		"classCode": "LB-02",
 		"task": 97,
 		"preTest": 92,
 		"postTest": 61
@@ -114,6 +130,7 @@ export const studentData = [
 	{
 		"id": 17,
 		"studentName": "Mira",
+		"classCode": "LD-02",
 		"task": 98,
 		"preTest": 50,
 		"postTest": 80
@@ -121,6 +138,7 @@ export const studentData = [
 	{
 		"id": 18,
 		"studentName": "Addison",
+		"classCode": "LC-02",
 		"task": 84,
 		"preTest": 61,
 		"postTest": 90
@@ -128,6 +146,7 @@ export const studentData = [
 	{
 		"id": 19,
 		"studentName": "Martha",
+		"classCode": "LB-02",
 		"task": 87,
 		"preTest": 69,
 		"postTest": 96
@@ -135,6 +154,7 @@ export const studentData = [
 	{
 		"id": 20,
 		"studentName": "Amity",
+		"classCode": "LD-02",
 		"task": 64,
 		"preTest": 99,
 		"postTest": 63
@@ -142,6 +162,7 @@ export const studentData = [
 	{
 		"id": 21,
 		"studentName": "Yen",
+		"classCode": "LC-02",
 		"task": 68,
 		"preTest": 79,
 		"postTest": 97
@@ -149,6 +170,7 @@ export const studentData = [
 	{
 		"id": 22,
 		"studentName": "April",
+		"classCode": "LB-02",
 		"task": 90,
 		"preTest": 93,
 		"postTest": 92
@@ -156,6 +178,7 @@ export const studentData = [
 	{
 		"id": 23,
 		"studentName": "Mia",
+		"classCode": "LB-02",
 		"task": 84,
 		"preTest": 79,
 		"postTest": 67
@@ -163,6 +186,7 @@ export const studentData = [
 	{
 		"id": 24,
 		"studentName": "Anika",
+		"classCode": "LD-02",
 		"task": 89,
 		"preTest": 69,
 		"postTest": 99
@@ -170,6 +194,7 @@ export const studentData = [
 	{
 		"id": 25,
 		"studentName": "Beck",
+		"classCode": "LC-02",
 		"task": 73,
 		"preTest": 75,
 		"postTest": 53
@@ -177,6 +202,7 @@ export const studentData = [
 	{
 		"id": 26,
 		"studentName": "Kibo",
+		"classCode": "LD-02",
 		"task": 83,
 		"preTest": 75,
 		"postTest": 60
@@ -184,6 +210,7 @@ export const studentData = [
 	{
 		"id": 27,
 		"studentName": "Harlan",
+		"classCode": "LB-02",
 		"task": 70,
 		"preTest": 84,
 		"postTest": 75
@@ -191,6 +218,7 @@ export const studentData = [
 	{
 		"id": 28,
 		"studentName": "Elvis",
+		"classCode": "LC-02",
 		"task": 86,
 		"preTest": 87,
 		"postTest": 75
@@ -198,6 +226,7 @@ export const studentData = [
 	{
 		"id": 29,
 		"studentName": "Dana",
+		"classCode": "LB-02",
 		"task": 99,
 		"preTest": 66,
 		"postTest": 84
@@ -205,6 +234,7 @@ export const studentData = [
 	{
 		"id": 30,
 		"studentName": "Francis",
+		"classCode": "LB-02",
 		"task": 71,
 		"preTest": 99,
 		"postTest": 59

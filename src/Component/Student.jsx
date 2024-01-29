@@ -1,79 +1,89 @@
-import { studentData } from "../studentData";
-import { useTable, usePagination } from 'react-table';
-import Pagination from "./Pagination";
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { studentData } from '../studentData';
+import '../style/ClassDetail.css';
 
 function Student() {
+    const { classCode } = useParams();
+    const pageSize = 5;
+
     function getRandomProgress() {
-        const randomPercentage = Math.floor(Math.random() * 11) * 10; // 0%, 10%, 20%, ..., 100%
-        return `${randomPercentage}%`;
+        return `${Math.floor(Math.random() * 11) * 10}%`;
     }
 
-    const columns = [
-        {
-            Header: 'No',
-            accessor: 'id',
-        },
-        {
-            Header: 'Name',
-            accessor: 'studentName',
-        },
-        {
-            Header: 'Progress',
-            accessor: 'progress',
-            Cell: ({ row }) => <div>{getRandomProgress()}</div>,
-        },
-    ];
+    const filteredStudents = studentData
+        .filter(student => student.classCode.toLowerCase() === classCode.toLowerCase())
+        .map(student => ({
+            ...student,
+            progress: getRandomProgress(),
+        }));
 
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        page,
-        prepareRow,
-    } = useTable(
-        {
-            columns,
-            data: studentData,
-            initialState: { pageIndex: 0 }, // Set the initial page index to 0
-            pageSize: 5,
-        },
-        usePagination
-    );
+    const [currentPage, setCurrentPage] = useState(0);
+    const [activeButton, setActiveButton] = useState(null);
+    const [isPaginationActive, setPaginationActive] = useState(false);
+
+    const totalPages = Math.ceil(filteredStudents.length / pageSize);
+
+    const handlePageChange = newPage => {
+        setPaginationActive(true);
+        setActiveButton(newPage);
+        setTimeout(() => {
+            setCurrentPage(newPage);
+            setPaginationActive(false);
+        }, 500); // Set timeout to simulate overlay effect
+    };
+
+    const generatePageNumbers = () => {
+        const pageNumbers = [];
+        for (let i = 0; i < totalPages; i++) {
+            pageNumbers.push(
+                <button
+                    key={i}
+                    onClick={() => handlePageChange(i)}
+                    className={`${currentPage === i ? 'active' : ''} ${activeButton === i ? 'pressed' : ''} ${
+                        isPaginationActive ? 'overlay' : ''
+                    }`}
+                >
+                    {i + 1}
+                </button>
+            );
+        }
+        return pageNumbers;
+    };
 
     return (
         <div className="student-container">
-            <table {...getTableProps()} className="student-table">
+            <table className="student-table">
                 <thead>
-                    {headerGroups.map((headerGroup) => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map((column) => (
-                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-                            ))}
-                        </tr>
-                    ))}
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Progress</th>
+                    </tr>
                 </thead>
-                <tbody {...getTableBodyProps()}>
-                    {page.map((row) => {
-                        prepareRow(row);
-                        return (
-                            <tr {...row.getRowProps()}>
-                                {row.cells.map((cell) => (
-                                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                                ))}
+                <tbody>
+                    {filteredStudents
+                        .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+                        .map((student, index) => (
+                            <tr key={currentPage * pageSize + index + 1}>
+                                <td>{currentPage * pageSize + index + 1}</td>
+                                <td>{student.studentName}</td>
+                                <td>
+                                    <div className="progress-container">
+                                        <div className="progress-bar-container">
+                                            <div
+                                                className="progress-bar"
+                                                style={{ width: student.progress }}
+                                            ></div>
+                                        </div>
+                                        <div className="progress-text">{student.progress}</div>
+                                    </div>
+                                </td>
                             </tr>
-                        );
-                    })}
+                        ))}
                 </tbody>
             </table>
-            {/* Render the pagination component */}
-            <Pagination
-                todosPerPage={5} // or adjust accordingly
-                totalTodos={studentData.length}
-                paginate={(pageNumber) => {
-                    // Use setPage method provided by usePagination
-                    setPageSize(pageNumber);
-                }}
-            />
+            <div className="pagination">{generatePageNumbers()}</div>
         </div>
     );
 }

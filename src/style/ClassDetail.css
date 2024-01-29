@@ -28,3 +28,68 @@
     height: 30px;
     width: 30px;
 }
+
+.student-table {
+    margin-left: 25px;
+    border: 1px solid #99C1FF;
+}
+
+
+.student-table th {
+    background-color: #2D76E5;
+    color: white;
+    width: 50vh;
+    height: 8vh;
+    padding-left: 10px;
+}
+
+.student-table td {
+    width: 50vh;
+    border-bottom: 1px solid #99C1FF;
+    height: 8vh;
+    padding-left: 10px;
+}
+
+
+.pagination button {
+    background-color: #2D76E5;
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    width: 5vh;
+    height: 5vh;
+}
+
+.pagination button.active {
+    background-color: #042e6b;
+    color: white;
+}
+
+.pagination button.pressed {
+    background-color: #042e6b;
+    color: white;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar-container {
+    width: 100px; /* Sesuaikan dengan lebar maksimum yang diinginkan */
+    margin-right: 8px; /* Sesuaikan jarak antara progress bar dan teks */   
+    border-radius: 20px;
+    background-color: #D4D4D4;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 20px;
+    width: 100%; 
+}
+
+.progress-text {
+    white-space: nowrap;
+}
+
