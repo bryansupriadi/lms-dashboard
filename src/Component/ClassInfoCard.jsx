@@ -34,19 +34,6 @@ const CardPart = ({ data }) => (
             </div>
           </>
         )}
-        <button 
-          type="button" 
-          className="btn btn-primary" 
-          style={{
-            width: "150px",
-            position: "fixed",
-            bottom: "10px",
-            right: "10px",
-          }} 
-          // onClick={handleSubmit}
-        >
-          Class Detail
-        </button>
       </div>
     ))}
   </div>
