@@ -2,7 +2,7 @@ function Forum(){
 
     return(
         <div className="forum-container">
-        <h1>tes</h1>
+        <h5 style={{fontWeight: 'bold', marginLeft: '7vh', fontSize: '18px'}}>Diskusi</h5>
         </div>
     )
 }

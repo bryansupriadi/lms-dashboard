@@ -4,7 +4,7 @@ import { studentData } from '../studentData';
 import '../style/ClassDetail.css';
 
 function Task() {
-    const { topic, classCode } = useParams();
+    const { topic, classCode, page } = useParams();
     const pageSize = 5;
 
     function getRandomProgress() {
@@ -112,10 +112,19 @@ function Task() {
                             <tr key={currentPage * pageSize + index + 1}>
                                 <td>{currentPage * pageSize + index + 1}</td>
                                 <td>{student.studentName}</td>
-                                <td>{student.lastUpdate}</td>
-                                <td>{student.task}</td>
                                 <td>
-                                    <button onClick={() => openPopup(student)} style={{border: 'none', backgroundColor: '#fff', color: '#2D76E5'}}>Lihat Tugas</button>
+                                    {page !== 'kelas-berlangsung' && (
+                                        <>
+                                            <div>{student.lastUpdate}</div>
+                                            <div>{student.time} GMT +7</div>
+                                        </>
+                                    )}
+                                </td>
+                                <td>{page !== 'kelas-berlangsung' ? student.task : ''}</td> 
+                                <td>
+                                    {page !== 'kelas-berlangsung' && (
+                                        <button onClick={() => openPopup(student)} style={{border: 'none', backgroundColor: '#fff', color: '#2D76E5'}}>Lihat Tugas</button>
+                                    )}
                                 </td>
                             </tr>
                         ))}
@@ -124,32 +133,32 @@ function Task() {
             <div className="pagination">{generatePageNumbers()}</div>
 
             {isPopupOpen && (
-                <div className="popup">
-                    <div className="popup-content">
-                        <span className="close" onClick={closePopup}>
-                            &times;
-                        </span>
-                        <h1 className='fs-4' style={{fontWeight: 'bold'}}>Tugas Mandiri</h1>
-                        {/* Tampilkan detail tugas di sini */}
-                        <h5 className='fs-5' style={{fontWeight: '400'}}>Topik: {convertToTitleCase(topic)}</h5>
-                        <p className='pt-3'>Jawaban:</p>
-                        <div className='d-flex align-items-center justify-content-center pb-2'>
-                            <img src={selectedStudent?.icon} alt="tugas"/>
-                        </div>
-                        <p>Ini hasil jawaban saya, silahkan diperiksa. Terima kasih</p>
-                        
-                        {/* Form untuk memberi nilai */}
-                        <form onSubmit={(e) => { e.preventDefault(); handleSubmitNilai(); }}>
-                            <label>
-                                Beri nilai:
-                                <input type="text" value={nilai} onChange={handleNilaiChange} style={{marginLeft: '10px'}}/>
-                            </label>
-                            {error && <p className="error">{error}</p>}
-                            {nilai !== '' && !error && <button type="submit" style={{backgroundColor: '#2D76E5', color: 'white', border: 'none', borderRadius: '10px', width: '15vh', height: '5vh', marginLeft: '10px'}}>Submit</button>}
-                        </form>
+            <div className="popup">
+                <div className="popup-content">
+                    <span className="close" onClick={closePopup}>
+                        &times;
+                    </span>
+                    <h1 className='fs-4' style={{fontWeight: 'bold'}}>Tugas Mandiri</h1>
+                    {/* Tampilkan detail tugas di sini */}
+                    <h5 className='fs-5' style={{fontWeight: '400'}}>Topik: {convertToTitleCase(topic)}</h5>
+                    <p className='pt-3'>Jawaban:</p>
+                    <div className='d-flex align-items-center justify-content-center pb-2'>
+                        <img src={selectedStudent?.icon} alt="tugas"/>
                     </div>
+                    <p>Ini hasil jawaban saya, silahkan diperiksa. Terima kasih</p>
+                    
+                    {/* Form untuk memberi nilai */}
+                    <form onSubmit={(e) => { e.preventDefault(); handleSubmitNilai(); }}>
+                        <label>
+                            Beri nilai:
+                            <input type="text" value={nilai} onChange={handleNilaiChange} style={{marginLeft: '10px'}}/>
+                        </label>
+                        {error && <p className="error">{error}</p>}
+                        {nilai !== '' && !error && <button type="submit" style={{backgroundColor: '#2D76E5', color: 'white', border: 'none', borderRadius: '10px', width: '15vh', height: '5vh', marginLeft: '10px'}}>Submit</button>}
+                    </form>
                 </div>
-            )}
+            </div>
+        )}
         </div>
     );
 }

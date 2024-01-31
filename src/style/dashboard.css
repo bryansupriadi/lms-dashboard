@@ -24,3 +24,28 @@
     margin-left: 19vw;
     margin-top: 8.9vh;
 }
+
+.forum-card-content {
+    display: flex;
+    align-items: center;
+}
+
+.forum-content-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Atur margin sesuai kebutuhan */
+}
+
+.forum-card-image {
+    width: 50px; /* Atur lebar gambar sesuai kebutuhan */
+    height: 50px; /* Atur tinggi gambar sesuai kebutuhan */
+    object-fit: cover; /* Atur object-fit sesuai kebutuhan */
+}
+
+.forum-class-container {
+    margin-left: 10px; /* Atur margin sesuai kebutuhan */
+}
+
+.view-replies {
+    margin-left: auto; /* Pindahkan ke kanan sejauh mungkin */
+}
